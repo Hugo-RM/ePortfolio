@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><%- include('partials/head', { title: 'Contact' }) %></head>
+<body>
+    <%- include('partials/nav') %>
+
+    <main>
+        <h1>Contact</h1>
+
+        <% if (typeof success !== 'undefined') { %>
+            <% if (success) { %>
+                <p>Message sent! I'll get back to you soon.</p>
+            <% } else { %>
+                <p>Something went wrong. Please try again.</p>
+            <% } %>
+        <% } %>
+
+        <form action="/contact" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+    </main>
+
+    <%- include('partials/footer') %>
+</body>
+</html>

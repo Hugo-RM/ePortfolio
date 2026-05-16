@@ -1,0 +1,23 @@
+{
+  "name": "eportfolio",
+  "version": "1.0.0",
+  "description": "Hugo Ruiz-Mireles personal ePortfolio",
+  "license": "ISC",
+  "author": "Hugo Ruiz-Mireles",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "ejs": "^5.0.2",
+    "express": "^5.2.1",
+    "morgan": "^1.10.1",
+    "nodemailer": "^8.0.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
