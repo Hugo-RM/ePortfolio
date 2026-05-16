@@ -1,24 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head><%- include('partials/head') %></head>
+
 <body>
     <%- include('partials/nav') %>
 
     <div class="container py-5">
         <div class="row align-items-center">
+            <div class="col-lg-4 text-center mb-4 mb-lg-0">
+                <img src="/images/Hugo Ruiz-Mireles.webp" class="img-fluid rounded-circle" style="max-width: 280px;"
+                    alt="Hugo Ruiz-Mireles">
+            </div>
             <div class="col-lg-8">
                 <h1 class="display-4 fw-bold">Hugo Ruiz-Mireles</h1>
-                <p class="lead">CS student at CSUMB with an interest in contributing to many fields with my knowledge of computational and algorithmic theory.</p>
-                <p>Through the NHGRI-funded GREAT Scholars program, I work in Dr. Benedict Paten's lab at the UC Santa Cruz Genomics Institute, bringing optimizations to genome graph tooling.</p>
-                <div class="mt-4">
-                    <a href="/about" class="btn btn-dark me-2">About Me</a>
-                    <a href="/research" class="btn btn-outline-dark me-2">Research</a>
-                    <a href="/contact" class="btn btn-outline-dark">Contact</a>
+                <p class="lead">Third year of CS at CSUMB with an interest in contributing to many fields with my
+                    knowledge of computational and algorithmic theory.</p>
+                <p>Through the NHGRI-funded GREAT Scholars program, I will work in Dr. Benedict Paten's lab at the
+                    UC Santa Cruz Genomics Institute, bringing optimizations to genome graph tooling.</p>
+                <h2 class="mt-5 mb-3">Some Highlights \(^u^)/</h2>
+                <ul>
+                    <li>NIH NHGRI GREAT Scholar</li>
+                    <li>18th of 73 teams, ICPC Pacific Northwest Regional Division 2 (2025)</li>
+                    <li>Contributed QOL feature impacting 200K+ monthly users of p5.js Web Editor</li>
+                    <li>Maintaining 3.5+ GPA in an accelerated bachelor's program while researching, working, and
+                        doing open source</li>
+                </ul>
+                <div class="clearfix mb-5">
+                    <h2 class="mb-3">Skills</h2>
+                    <p><strong>Languages:</strong> C++, Python, JavaScript, Bash, Java, SQL</p>
+                    <p><strong>Frameworks & Libraries:</strong> NumPy, Next.js, Express.js, Node.js</p>
+                    <p><strong>Tools:</strong> Git, GitHub, CLI</p>
                 </div>
+            </div>
+            <div class="mt-4">
+                <a href="/about" class="btn btn-dark me-2">About Me</a>
+                <a href="/research" class="btn btn-outline-dark me-2">Research</a>
+                <a href="/contact" class="btn btn-outline-dark">Contact</a>
             </div>
         </div>
     </div>
 
     <%- include('partials/footer') %>
 </body>
+
 </html>
