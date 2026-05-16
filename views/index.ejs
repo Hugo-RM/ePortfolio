@@ -4,10 +4,20 @@
 <body>
     <%- include('partials/nav') %>
 
-    <main>
-        <h1>Hugo Ruiz-Mireles</h1>
-        <p>CS student at CSUMB. NIH NHGRI GREAT Scholar. Competitive programmer. Open source contributor.</p>
-    </main>
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h1 class="display-4 fw-bold">Hugo Ruiz-Mireles</h1>
+                <p class="lead">CS student at CSUMB with an interest in contributing to many fields with my knowledge of computational and algorithmic theory.</p>
+                <p>Through the NHGRI-funded GREAT Scholars program, I work in Dr. Benedict Paten's lab at the UC Santa Cruz Genomics Institute, bringing optimizations to genome graph tooling.</p>
+                <div class="mt-4">
+                    <a href="/about" class="btn btn-dark me-2">About Me</a>
+                    <a href="/research" class="btn btn-outline-dark me-2">Research</a>
+                    <a href="/contact" class="btn btn-outline-dark">Contact</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <%- include('partials/footer') %>
 </body>

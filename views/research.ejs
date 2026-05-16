@@ -4,9 +4,19 @@
 <body>
     <%- include('partials/nav') %>
 
-    <main>
-        <h1>Research</h1>
-    </main>
+    <div class="container py-5">
+        <h1 class="mb-4">Research Interests & Experience</h1>
+
+        <p>I'm currently interested in using CS to make genomic tools faster and more accurate. Through CSUMB's NHGRI GREAT Scholars program, I've been placed in Dr. Benedict Paten's lab at the UC Santa Cruz Genomics Institute, mentored by Shloka Negi.</p>
+
+        <h2 class="mt-5 mb-3">Current Project — Pangenome-Guided Assembly</h2>
+        <p>My project centers on pangenome-guided assembly (PGA), an approach to reconstructing a person's full genome from sequencing reads by aligning them to a pangenome graph rather than a single linear reference. The pangenome graph encodes genetic variation across hundreds of human haplotypes, reducing reference bias and improving accuracy. The lab's tool, long-read Giraffe, handles the alignment step.</p>
+
+        <p>My specific contribution is porting <strong>vg-anchors</strong> from Python to C++, with performance optimizations. vg-anchors takes pangenome alignments and identifies anchor k-mers — short sequences used to partition reads by haplotype before local assembly. The goal is to outperform existing methods in both runtime and memory usage.</p>
+
+        <h2 class="mt-5 mb-3">Long-Term Interests</h2>
+        <p>I want to apply graph theory, combinatorics, and algorithmic thinking to computationally demanding fields of research. Genomics is my focus for now — pangenomes are a natural fit because the underlying structure is fundamentally a graph problem.</p>
+    </div>
 
     <%- include('partials/footer') %>
 </body>
