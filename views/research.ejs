@@ -1,23 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><%- include('partials/head', { title: 'Research' }) %></head>
+
+<head><%- include('partials/head') %></head>
+
 <body>
     <%- include('partials/nav') %>
 
     <div class="container py-5">
-        <h1 class="mb-4">Research Interests & Experience</h1>
 
-        <p>I'm currently interested in using CS to make genomic tools faster and more accurate. Through CSUMB's NHGRI GREAT Scholars program, I've been placed in Dr. Benedict Paten's lab at the UC Santa Cruz Genomics Institute, mentored by Shloka Negi.</p>
+        <!-- Header -->
+        <div class="row mb-5">
+            <div class="col-lg-8">
+                <h1 class="display-4 fw-bold">Research</h1>
+                <p class="lead">NHGRI GREAT Scholar | UC Santa Cruz Genomics Institute</p>
+                <p>Through the NIH NHGRI-funded GREAT Scholars program, I am paired with Dr. Benedict Paten's lab at
+                    the UC Santa Cruz Genomics Institute, working on performance improvements to pangenome graph tooling
+                    in the <a href="https://github.com/vgteam" target="_blank" class="link-dark">vg toolkit</a>.</p>
+            </div>
+        </div>
 
-        <h2 class="mt-5 mb-3">Current Project — Pangenome-Guided Assembly</h2>
-        <p>My project centers on pangenome-guided assembly (PGA), an approach to reconstructing a person's full genome from sequencing reads by aligning them to a pangenome graph rather than a single linear reference. The pangenome graph encodes genetic variation across hundreds of human haplotypes, reducing reference bias and improving accuracy. The lab's tool, long-read Giraffe, handles the alignment step.</p>
+        <!-- Project -->
+        <div class="row align-items-start mb-5">
+            <div class="col-lg-8">
+                <h2 class="fw-bold mb-3">Porting vg-anchors to C++</h2>
+                <p>
+                    My project is centered on vg-anchors, a tool in the pangenome-guided assembly (PGA)
+                    pipeline that is part of the vg toolkit. The PGA pipeline takes a pangenome graph and a sample's
+                    long sequencing reads and produces a phased local genome assembly, meaning it reconstructs which
+                    copy of a chromosome came from which parent, even in structurally complex regions.
+                </p>
+                <p>
+                    A key step in this pipeline is anchor generation. Anchors are short, potentially
+                    haplotype-informative k-mers derived from unique paths within leaf snarls (sites of variation in
+                    the graph that contain no nested sub-variants). Because reads that support the same anchor likely
+                    originate from the same haplotype, anchors are used to partition reads before assembly.
+                </p>
+                <p>
+                    The existing anchor generation code is written in Python. My work is to port it to C++ and introduce
+                    algorithmic improvements to reduce runtime and memory use, making the tool practical for
+                    large-scale pangenomes, which are expected to grow to thousands of haplotypes in coming years.
+                </p>
+            </div>
+            <div class="col-lg-4">
+                <figure class="figure">
+                    <img src="/images/figure_6a.webp" class="figure-img img-fluid rounded" alt="Pangenome-guided assembly workflow">
+                    <figcaption class="figure-caption">Pangenome-guided assembly workflow: reads are mapped to a personalized pangenome, anchors are generated at snarls, and the Shasta assembler produces a phased assembly.</figcaption>
+                </figure>
+            </div>
+        </div>
 
-        <p>My specific contribution is porting <strong>vg-anchors</strong> from Python to C++, with performance optimizations. vg-anchors takes pangenome alignments and identifies anchor k-mers — short sequences used to partition reads by haplotype before local assembly. The goal is to outperform existing methods in both runtime and memory usage.</p>
+        <!-- Background -->
+        <div class="row mb-5">
+            <div class="col-lg-8">
+                <h2 class="fw-bold mb-3">Background: Why Pangenomes?</h2>
+                <p>
+                    Traditional genomics compares sequencing reads against a single linear reference genome, the
+                    GRCh38 human reference. This causes reference bias: variants that differ from the
+                    reference are harder to detect, especially in structurally complex regions like segmental
+                    duplications.
+                </p>
+                <p>
+                    A pangenome graph encodes many haplotypes simultaneously. Each node in the graph
+                    holds a DNA sequence, and each path through the graph represents a known haplotype. The Human
+                    Pangenome Reference Consortium (HPRC) has released graphs built from hundreds of diverse human
+                    genomes, giving aligners a much richer reference to map reads against.
+                </p>
+                <p>
+                    The vg toolkit's Giraffe aligner maps reads, both short Illumina reads and long
+                    Oxford Nanopore or PacBio HiFi reads, to these pangenome graphs efficiently. Personalized
+                    pangenomes take this further: before alignment, the graph is pruned down to haplotypes most
+                    compatible with the sample's own k-mer composition, reducing noise from variants the sample
+                    doesn't carry.
+                </p>
+            </div>
+        </div>
 
-        <h2 class="mt-5 mb-3">Long-Term Interests</h2>
-        <p>I want to apply graph theory, combinatorics, and algorithmic thinking to computationally demanding fields of research. Genomics is my focus for now — pangenomes are a natural fit because the underlying structure is fundamentally a graph problem.</p>
+        <!-- Status -->
+        <div class="row mb-5">
+            <div class="col-lg-8">
+                <h2 class="fw-bold mb-3">Current Status</h2>
+                <p>
+                    This is my first research experience and it's still early. Right now I'm focused on understanding
+                    the existing Python implementation, the vg codebase, and the biology behind snarl-based anchor
+                    generation. I'm working toward producing a C++ implementation that passes the same correctness
+                    tests and measurably improves performance.
+                </p>
+                <p>
+                    I'll update this page as the project develops.
+                </p>
+            </div>
+        </div>
+
+        <!-- Lab / Program info -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <hr>
+                <div class="row mt-4">
+                    <div class="col-md-4 mb-3">
+                        <h5 class="fw-bold">Program</h5>
+                        <p>NIH NHGRI GREAT Scholars<br>
+                        California State University Monterey Bay</p>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <h5 class="fw-bold">Host Lab</h5>
+                        <p>
+                            <a href="https://cglgenomics.ucsc.edu/" target="_blank" class="link-dark">Computational Genomics Lab</a><br>
+                            UC Santa Cruz Genomics Institute<br>
+                            <span class="text-muted">PI: Dr. Benedict Paten</span>
+                        </p>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <h5 class="fw-bold">Related Work</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="https://github.com/shlokanegi/vg_anchors" target="_blank" class="link-dark">vg anchors (GitHub)</a></li>
+                            <li><a href="https://github.com/vgteam/vg" target="_blank" class="link-dark">vg toolkit (GitHub)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <%- include('partials/footer') %>
 </body>
+
 </html>
