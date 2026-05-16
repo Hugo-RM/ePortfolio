@@ -1,34 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head><%- include('partials/head', { title: 'About' }) %></head>
+
 <body>
     <%- include('partials/nav') %>
 
     <div class="container py-5">
-        <h1 class="mb-4">About Me</h1>
+        <h1 class="mb-5">About Me</h1>
 
-        <p>I enjoy problem solving and being around people who do too. That drive led me to join CSUMB's competitive programming team, and shows up outside of CS in the team sports I play and games I run with friends.</p>
+        <div class="clearfix mb-5">
+            <img src="/images/icpc_team_photo.webp" class="img-fluid rounded float-end ms-4 mb-3" style="max-width: 45%; max-height: 320px; object-fit: cover;" alt="ICPC team">
+            <p>
+                I enjoy problem solving and being around people who do too. I highly
+                value being in learning communities which led me to joining CSUMB's
+                competitive programming team. We placed 18th out of 73 teams at the
+                2025 ICPC Pacific Northwest Regional, which was a great experience and
+                something I want to keep building on.
+            </p>
+            <p>
+                That same drive shows up outside of CS too. I play soccer, swim, and
+                run games with friends regularly. Most of the people I spend time with
+                are also into competition or problem solving in some form, whether that's
+                sports, games, or just trying to figure something out together.
+            </p>
+            <p>
+                My curiosity is what pulled me into CS. It's a field where you can
+                apply your skills almost anywhere, which matters to me because I
+                don't want to be boxed in. That same curiosity led me to research.
+                I have ADHD, and when a problem hits right, that becomes an advantage.
+                I can hyperfocus and just go at it!
+            </p>
+        </div>
 
-        <p>My curiosity is what pulled me into CS — it's a field where you can apply your skills almost anywhere, which matters to me because I don't want to be boxed in. That same curiosity led me to research. I have ADD, and when a problem hits right, that becomes an advantage.</p>
+        <div class="clearfix mb-5">
+            <img src="/images/mid_flip.webp" class="img-fluid rounded float-start me-4 mb-3" style="max-width: 40%; max-height: 340px; object-fit: cover;" alt="Swimming">
+            <img src="/images/pll_photo.webp" class="img-fluid rounded float-end ms-4 mb-3" style="max-width: 28%; max-height: 340px; object-fit: cover;" alt="Tutoring at Hartnell">
+            <p>
+                I'm part of CTI's CSin3 program, an accelerated path to a CS bachelor's
+                in three years split between Hartnell College and CSUMB. During my time
+                at Hartnell I worked as a tutor and eventually became lead tutor at the
+                Alisal satellite campus. I tutored Computer Science and Mathematics.
+            </p>
+            <p>
+                Teaching something is a good way to find out how well you actually
+                understand it. Tutoring pushed me to get sharper on the fundamentals
+                and figure out how to explain things in different ways depending on
+                who I was working with. It also surrounded me with a lot of super
+                smart colleagues who I still keep in contact with!
+            </p>
+        </div>
 
-        <p>I'm part of CTI's CSin3 program, an accelerated path to a CS bachelor's in three years between CSUMB and Hartnell College. During my time at Hartnell I worked as a tutor, finishing as lead tutor at the Alisal campus.</p>
-
-        <p>I've also begun my journey of open source contributions — 2 at p5.js and 1 at git-extras so far.</p>
-
-        <h2 class="mt-5 mb-3">Highlights</h2>
-        <ul>
-            <li>18th of 73 teams, ICPC Pacific Northwest Regional Division 2 (2025)</li>
-            <li>NIH NHGRI GREAT Scholar</li>
-            <li>Contributed QOL feature impacting 200K+ monthly users of p5.js Web Editor</li>
-            <li>Maintaining 3.5+ GPA in an accelerated bachelor's program while researching</li>
-        </ul>
-
-        <h2 class="mt-5 mb-3">Skills</h2>
-        <p><strong>Languages:</strong> C++, Python, JavaScript, Bash, Java, SQL</p>
-        <p><strong>Frameworks & Libraries:</strong> NumPy, Next.js, Express.js, Node.js</p>
-        <p><strong>Tools:</strong> Git, GitHub, CLI</p>
-    </div>
+        <div class="clearfix mb-5">
+            <img src="/images/otter_hacks_win.webp" class="img-fluid rounded float-end ms-4 mb-3" style="max-width: 35%; max-height: 280px; object-fit: cover;" alt="OtterHacks top 3 finish">
+            <p>
+                I've started contributing to open source and I enjoy it more than I
+                expected. So far I've contributed to p5.js and git-extras. My main p5.js
+                contribution was building a URL parameter feature for the p5.js Web Editor
+                that lets educators share version-specific sketch links, something around
+                200K monthly users benefit from. It was my first time working in a large
+                production codebase and navigating that was a good challenge on its own.
+            </p>
+            <p>
+                Outside of that I've been doing hackathons. It was pretty rough as my first
+                experience was at UC Berkeley's AI Hackathon when I was a freshman.
+                After that I finished 3rd at CSUMB's OtterHacks winning some nice headphones.
+                My most recent experience was CSUMB's Kelp Your Neighbor hackathon where my
+                group worked on a local event finder with carpooling functionality. Making the
+                interactive map was a lot of fun to learn how to do.
+            </p>
+        </div>
 
     <%- include('partials/footer') %>
 </body>
+
 </html>
