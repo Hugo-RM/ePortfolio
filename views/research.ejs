@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><%- include('partials/head') %></head>
+<head>
+    <%- include('partials/head', { title: 'Research' ,
+        description: 'Hugo Ruiz-Mireles research experiences.'
+    }) %>
+</head>
 
 <body>
     <%- include('partials/nav') %>
@@ -14,7 +18,8 @@
                 <h1 class="display-4 fw-bold">Research</h1>
                 <p class="lead">NHGRI GREAT Scholar | UC Santa Cruz Genomics Institute</p>
                 <p>Through the NIH NHGRI-funded GREAT Scholars program, I am paired with Dr. Benedict Paten's lab at
-                    the UC Santa Cruz Genomics Institute, working on performance improvements to pangenome graph tooling
+                    the UC Santa Cruz Genomics Institute, working on performance improvements to pangenome graph
+                    tooling
                     in the <a href="https://github.com/vgteam" target="_blank" class="link-dark">vg toolkit</a>.</p>
             </div>
         </div>
@@ -32,19 +37,24 @@
                 <p>
                     A key step in this pipeline is anchor generation. Anchors are short, potentially
                     haplotype-informative k-mers derived from unique paths within leaf snarls (sites of variation in
-                    the graph that contain no nested sub-variants). Because reads that support the same anchor likely
+                    the graph that contain no nested sub-variants). Because reads that support the same anchor
+                    likely
                     originate from the same haplotype, anchors are used to partition reads before assembly.
                 </p>
                 <p>
-                    The existing anchor generation code is written in Python. My work is to port it to C++ and introduce
+                    The existing anchor generation code is written in Python. My work is to port it to C++ and
+                    introduce
                     algorithmic improvements to reduce runtime and memory use, making the tool practical for
                     large-scale pangenomes, which are expected to grow to thousands of haplotypes in coming years.
                 </p>
             </div>
             <div class="col-lg-4">
                 <figure class="figure">
-                    <img src="/images/figure_6a.webp" class="figure-img img-fluid rounded" alt="Pangenome-guided assembly workflow">
-                    <figcaption class="figure-caption">Pangenome-guided assembly workflow: reads are mapped to a personalized pangenome, anchors are generated at snarls, and the Shasta assembler produces a phased assembly.</figcaption>
+                    <img src="/images/figure_6a.webp" class="figure-img img-fluid rounded"
+                        alt="Pangenome-guided assembly workflow">
+                    <figcaption class="figure-caption">Pangenome-guided assembly workflow: reads are mapped to a
+                        personalized pangenome, anchors are generated at snarls, and the Shasta assembler produces a
+                        phased assembly.</figcaption>
                 </figure>
             </div>
         </div>
@@ -80,7 +90,8 @@
             <div class="col-lg-8">
                 <h2 class="fw-bold mb-3">Current Status</h2>
                 <p>
-                    This is my first research experience and it's still early. Right now I'm focused on understanding
+                    This is my first research experience and it's still early. Right now I'm focused on
+                    understanding
                     the existing Python implementation, the vg codebase, and the biology behind snarl-based anchor
                     generation. I'm working toward producing a C++ implementation that passes the same correctness
                     tests and measurably improves performance.
@@ -99,12 +110,13 @@
                     <div class="col-md-4 mb-3">
                         <h5 class="fw-bold">Program</h5>
                         <p>NIH NHGRI GREAT Scholars<br>
-                        California State University Monterey Bay</p>
+                            California State University Monterey Bay</p>
                     </div>
                     <div class="col-md-4 mb-3">
                         <h5 class="fw-bold">Host Lab</h5>
                         <p>
-                            <a href="https://cglgenomics.ucsc.edu/" target="_blank" class="link-dark">Computational Genomics Lab</a><br>
+                            <a href="https://cglgenomics.ucsc.edu/" target="_blank" class="link-dark">Computational
+                                Genomics Lab</a><br>
                             UC Santa Cruz Genomics Institute<br>
                             <span class="text-muted">PI: Dr. Benedict Paten</span>
                         </p>
@@ -112,8 +124,10 @@
                     <div class="col-md-4 mb-3">
                         <h5 class="fw-bold">Related Work</h5>
                         <ul class="list-unstyled">
-                            <li><a href="https://github.com/shlokanegi/vg_anchors" target="_blank" class="link-dark">vg anchors (GitHub)</a></li>
-                            <li><a href="https://github.com/vgteam/vg" target="_blank" class="link-dark">vg toolkit (GitHub)</a></li>
+                            <li><a href="https://github.com/shlokanegi/vg_anchors" target="_blank"
+                                    class="link-dark">vg anchors (GitHub)</a></li>
+                            <li><a href="https://github.com/vgteam/vg" target="_blank" class="link-dark">vg toolkit
+                                    (GitHub)</a></li>
                         </ul>
                     </div>
                 </div>

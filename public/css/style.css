@@ -2,3 +2,10 @@ p {
     font-size: 1.1rem;
     line-height: 1.75;
 }
+
+.hp-field {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    pointer-events: none;
+}

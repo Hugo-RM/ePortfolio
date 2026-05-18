@@ -1,10 +1,20 @@
 import { Router } from 'express';
 import nodemailer from 'nodemailer';
+import rateLimit from 'express-rate-limit';
+
+const limiter = rateLimit({
+    windowMs: 60 * 60 * 1000,
+    max: 3,
+    message: 'Too many messages sent. Please try again later.',
+    standardHeaders: true,
+    legacyHeaders: false,
+});
 
 const router = Router();
 
-router.post('/', async (req, res) => {
-    const { name, email, message } = req.body;
+router.post('/', limiter, async (req, res) => {
+    const { name, email, message, website } = req.body;
+    if (website) return res.render('contact', { success: true });
 
     const transporter = nodemailer.createTransport({
         service: 'gmail',

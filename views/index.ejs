@@ -1,7 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><%- include('partials/head') %></head>
+<head>
+    <%- include('partials/head', {
+        description: 'Hugo Ruiz-Mireles: CS student at CSUMB, NIH NHGRI GREAT Scholar, competitive programmer, and open source contributor'
+    }) %>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Hugo Ruiz-Mireles",
+        "url": "https://hugoruizmireles.com",
+        "email": "hugo.ruizmireles@gmail.com",
+        "image": "https://hugoruizmireles.com/images/Hugo%20Ruiz-Mireles.webp",
+        "jobTitle": "Undergraduate Researcher",
+        "description": "Computer Science junior at CSUMB researching genomics tooling, competing at ICPC, and contributing to open source projects.",
+        "award": "NIH NHGRI GREAT Scholar",
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Hartnell College"
+        },
+        "affiliation": {
+            { "@type": "CollegeOrUniversity", "name": "California State University, Monterey Bay" },
+            { "@type": "ResearchOrganization", "name": "UC Santa Cruz Genomics Institute" }
+        },
+        "memberOf": { "@type": "Organization", "name": "CSUMB Competitive Programming Team" },
+        "knowsAbout": ["C++", "Python", "Computational Genomics", "BioInformatics", "JavaScript", "Bash"],
+        "sameAs": [
+            "https://linkedin.com/in/hugo-ruiz-mireles",
+            "https://github.com/Hugo-RM"
+        ]
+    }
+    </script>
+</head>
 
 <body>
     <%- include('partials/nav') %>
@@ -32,11 +63,11 @@
                     <p><strong>Frameworks & Libraries:</strong> NumPy, Next.js, Express.js, Node.js</p>
                     <p><strong>Tools:</strong> Git, GitHub, CLI</p>
                 </div>
-            </div>
-            <div class="mt-4">
-                <a href="/about" class="btn btn-dark me-2">About Me</a>
-                <a href="/research" class="btn btn-outline-dark me-2">Research</a>
-                <a href="/contact" class="btn btn-outline-dark">Contact</a>
+                <div class="mt-4">
+                    <a href="/about" class="btn btn-dark me-2">About Me</a>
+                    <a href="/research" class="btn btn-outline-dark me-2">Research</a>
+                    <a href="/contact" class="btn btn-outline-dark">Contact</a>
+                </div>
             </div>
         </div>
     </div>
