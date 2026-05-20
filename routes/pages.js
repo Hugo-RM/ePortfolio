@@ -30,7 +30,11 @@ router.get('/', (req, res) => res.render('index'));
 router.get('/about', (req, res) => res.render('about'));
 router.get('/research', (req, res) => res.render('research'));
 router.get('/cv', (req, res) => res.render('cv'));
-router.get('/contact', (req, res) => res.render('contact'));
+router.get('/contact', (req, res) => {
+    const { sent } = req.query;
+    if (sent === undefined) return res.render('contact');
+    res.render('contact', { success: sent === '1' });
+});
 
 router.get('/blog', (req, res) => {
     const files = fs.existsSync(postsDir)

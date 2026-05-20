@@ -11,7 +11,7 @@ p {
 
 .hp-field {
     position: absolute;
-    left: -9999px;
-    opacity: 0;
-    pointer-events: none;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
 }

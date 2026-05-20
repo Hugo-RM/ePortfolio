@@ -13,8 +13,8 @@ const limiter = rateLimit({
 const router = Router();
 
 router.post('/', limiter, async (req, res) => {
-    const { name, email, message, website } = req.body;
-    if (website) return res.render('contact', { success: true });
+    const { name, email, message, phone } = req.body;
+    if (phone?.trim()) return res.redirect('/contact?sent=1');
 
     const transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -32,10 +32,10 @@ router.post('/', limiter, async (req, res) => {
             subject: `ePortfolio contact from ${name}`,
             text: message,
         });
-        res.render('contact', { success: true });
+        res.redirect('/contact?sent=1');
     } catch (err) {
         console.error(err);
-        res.render('contact', { success: false });
+        res.redirect('/contact?sent=0');
     }
 });
 
